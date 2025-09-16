@@ -26,18 +26,8 @@ public class DB {
         }
     }
 
-    public static Connection getConnection() throws SQLException {
-        return dataSource.getConnection();
-    }
-
     public static HikariDataSource getDataSource() {
         return dataSource;
-    }
-
-    public static void shutdown() {
-        if (dataSource != null) {
-            dataSource.close();
-        }
     }
 
     private static Properties loadProperties() {

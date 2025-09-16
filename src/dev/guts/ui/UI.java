@@ -1,23 +1,20 @@
 package dev.guts.ui;
 
 import dev.guts.db.DB;
-import dev.guts.db.DbException;
-import dev.guts.model.dao.CarDAO;
-import dev.guts.model.dao.impl.CarDAOImpl;
-import dev.guts.model.entities.Car;
-
-import java.util.List;
 import java.util.Scanner;
 
 public class UI {
 
     private Scanner scanner;
     private CarMenuHandler carMenuHandler;
-
+    private CustomerMenuHandler customerMenuHandler;
+    private RentalMenuHandler rentalMenuHandler;
 
     public UI() {
         this.scanner = new Scanner(System.in);
         this.carMenuHandler = new CarMenuHandler();
+        this.customerMenuHandler = new CustomerMenuHandler();
+        this.rentalMenuHandler = new RentalMenuHandler();
     }
 
     public void start() {
@@ -25,10 +22,9 @@ public class UI {
     }
 
     public void menu() {
-
         boolean running = true;
 
-        while(running) {
+        while (running) {
             System.out.println("""
                     === Welcome to Kailua Car Rental Services ===
                     1: Car Menu
@@ -45,10 +41,10 @@ public class UI {
                         carMenuHandler.carMenu();
                         break;
                     case 2:
-                        customerMenu();
+                        customerMenuHandler.customerMenu();
                         break;
                     case 3:
-                        rentalMenu();
+                        rentalMenuHandler.rentalMenu();
                         break;
                     case 0:
                         running = false;
@@ -60,15 +56,5 @@ public class UI {
                 System.out.println("Please enter a valid number");
             }
         }
-    }
-
-
-
-    public void customerMenu() {
-
-    }
-
-    public void rentalMenu() {
-
     }
 }

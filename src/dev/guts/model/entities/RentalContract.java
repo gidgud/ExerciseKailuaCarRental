@@ -14,6 +14,10 @@ public class RentalContract {
     private int startOdometer;
     private String registrationNumber;
 
+    public RentalContract() {
+
+    }
+
     public RentalContract(int contractId, String driverLicenseNumber, LocalDateTime fromDateTime, LocalDateTime toDateTime, int maxKm, int startOdometer, String registrationNumber) {
         this.contractId = contractId;
         this.driverLicenseNumber = driverLicenseNumber;

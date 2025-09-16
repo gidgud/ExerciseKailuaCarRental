@@ -1,5 +1,6 @@
 package dev.guts.model.entities;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Renter {
@@ -11,9 +12,9 @@ public class Renter {
     private String mobilePhone;
     private String phone;
     private String email;
-    private Date driverSinceDate;
+    private LocalDate driverSinceDate;
 
-    public Renter(String driverLicenseNumber, String name, String address, String zip, String mobilePhone, String phone, String email, Date driverSinceDate) {
+    public Renter(String driverLicenseNumber, String name, String address, String zip, String mobilePhone, String phone, String email, LocalDate driverSinceDate) {
         this.driverLicenseNumber = driverLicenseNumber;
         this.name = name;
         this.address = address;
@@ -80,11 +81,11 @@ public class Renter {
         this.email = email;
     }
 
-    public Date getDriverSinceDate() {
+    public LocalDate getDriverSinceDate() {
         return driverSinceDate;
     }
 
-    public void setDriverSinceDate(Date driverSinceDate) {
+    public void setDriverSinceDate(LocalDate driverSinceDate) {
         this.driverSinceDate = driverSinceDate;
     }
 }
